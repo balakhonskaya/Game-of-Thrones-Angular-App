@@ -1,0 +1,37 @@
+<div class="container">
+  <br>
+  <div *ngIf="character; else loading">
+    <h1>{{ character.name }}</h1>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <h4>Aiases</h4>
+        <ng-container *ngFor="let aliases of character.aliases">
+          {{ aliases }}<br>
+        </ng-container>
+      </div>
+      <div class="four wide column">
+        <h4>Name</h4>
+        {{ character.name }}
+      </div>
+      <div class="four wide column">
+        <h4>Gender</h4>
+        {{ character.gender }}
+      </div>
+      <div class="four wide column">
+        <h4>Culture</h4>
+        {{ character.culture }}
+      </div>
+    </div>
+    <h4>Actor</h4>
+    <p>{{ character.playedBy }}</p>
+    <div class="ui small images">
+      <img *ngFor="let thumbnail of character.thumbnails"
+        [src]="thumbnail.url">
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="ui active centered inline loader"></div>
+  </ng-template>
+</div>

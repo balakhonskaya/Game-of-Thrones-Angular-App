@@ -1,0 +1,40 @@
+<div class="container">
+    <br>  
+    <div *ngIf="book; else loading">
+    <h1>{{ book.name }}</h1>
+    <p *ngIf="book.isbn">{{ book.isbn }}</p>
+    <div class="ui divider"></div>
+    <div class="ui grid">
+      <div class="four wide column">
+        <h4>Authors</h4>
+        <ng-container *ngFor="let author of book.authors">
+          {{ author }}
+        </ng-container>
+      </div>
+      <div class="four wide column">
+        <h4>Country</h4>
+        {{ book.country }}
+      </div>
+      <div class="four wide column">
+        <h4>Publisher</h4>
+        {{ book.publisher }}
+      </div>
+      <div class="four wide column">
+        <h4>Number of Pages</h4>
+        {{ book.numberOfPages }}
+      </div>
+    </div>
+    <h4>Main Characters</h4>
+    <a *ngFor="let character of book.povCharacters"
+    [routerLink]="['/characters',getId(character)]">Character {{getId(character)}}, </a>
+    <div class="ui small images">
+      <img *ngFor="let thumbnail of book.thumbnails"
+        [src]="thumbnail.url">
+    </div>
+    <br>
+  </div>
+
+  <ng-template #loading>
+    <div class="ui active centered inline loader"></div>
+  </ng-template>
+</div>

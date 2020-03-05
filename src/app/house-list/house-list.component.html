@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="ui middle aligned selection divided list">
+      <bm-house-list-item class="item"
+        *ngFor="let b of houses"
+        [house]="b"
+        [routerLink]="houses.indexOf(b)+1"></bm-house-list-item>
+  
+      <div *ngIf="!houses" class="ui active dimmer">
+        <div class="ui large text loader">Daten werden geladen...</div>
+      </div>
+  
+      <p *ngIf="houses && !houses.length">Es wurden noch keine Bücher eingetragen.</p>
+    </div>
+  </div>

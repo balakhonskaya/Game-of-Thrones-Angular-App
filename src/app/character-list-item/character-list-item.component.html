@@ -1,0 +1,18 @@
+<div class="container">
+  <img class="ui tiny image"
+      *ngIf="character.thumbnails && character.thumbnails[0] && character.thumbnails[0].url"
+      [src]="character.thumbnails[0].url">
+  <div class="content">
+    <div class="header">{{ character.aliases }}</div>
+    <div *ngIf="character.titles" class="description">{{ character.titles }}</div>
+    <div class="metadata">
+      <span *ngFor="let aliases of character.aliases; last as l">
+        {{ aliases }}<span *ngIf="!l">, </span>
+      </span>
+      <br>
+      {{ character.playedBy }}
+      <br>
+      {{ character.culture }}
+    </div>
+  </div>
+</div>

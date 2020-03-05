@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="ui middle aligned selection divided list">
+    <bm-character-list-item class="item"
+      *ngFor="let b of characters"
+      [character]="b"
+      [routerLink]="characters.indexOf(b)+1"></bm-character-list-item>
+
+    <div *ngIf="!characters" class="ui active dimmer">
+      <div class="ui large text loader">Daten werden geladen...</div>
+    </div>
+
+    <p *ngIf="books && !books.length">Es wurden noch keine Bücher eingetragen.</p>
+  </div>
+</div>

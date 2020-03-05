@@ -1,0 +1,13 @@
+<div class="container">
+    <img class="ui tiny image"
+         *ngIf="house.thumbnails && house.thumbnails[0] && house.thumbnails[0].url"
+         [src]="house.thumbnails[0].url">
+     <div class="content">
+       <div class="header">{{ house.name }}</div>
+       <div *ngIf="house.region" class="description">{{ house.region }}</div>
+       <div class="metadata">
+         {{ house.words }}
+       </div>
+     </div>
+   </div>
+   

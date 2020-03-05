@@ -1,0 +1,1083 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+
+/***/ "./$$_lazy_route_resource lazy recursive":
+/*!******************************************************!*\
+  !*** ./$$_lazy_route_resource lazy namespace object ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
+/*!**************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div id=\"carouselExampleControls\" class=\"carousel slide\" data-ride=\"carousel\">\n    <div class=\"carousel-inner\">\n      <div class=\"carousel-item active\">\n        <img class=\"d-block w-100\" src=\"/assets/img/Season-8.jpg\" alt=\"First slide\">\n        <div class=\"carousel-caption d-none d-md-block\">\n          <h2>Game of Thrones fan app</h2>\n          <p>All books</p>\n        </div>\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"/assets/img/emmys.jpg\" alt=\"Second slide\">\n        <div class=\"carousel-caption d-none d-md-block\">\n          <h2>Game of Thrones fan app</h2>\n          <p>Characters</p>\n        </div>\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"assets/img/fantasy.jpg\" alt=\"Third slide\">\n        <div class=\"carousel-caption d-none d-md-block\">\n          <h2>Game of Thrones fan app</h2>\n          <p>Houses</p>\n        </div>\n      </div>\n    </div>\n    <a class=\"carousel-control-prev\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"prev\">\n      <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"carousel-control-next\" href=\"#carouselExampleControls\" role=\"button\" data-slide=\"next\">\n      <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n  </div>\n  <div class=\"ui menu\">\n    <a routerLink=\"home\"  routerLinkActive=\"active\" class=\"item\">Home</a>\n    <a routerLink=\"books\" routerLinkActive=\"active\" class=\"item\">Books</a>\n    <a routerLink=\"characters\" routerLinkActive=\"active\" class=\"item\">Characters</a>\n    <a routerLink=\"houses\" routerLinkActive=\"active\" class=\"item\">Houses</a>\n  </div>\n</div>\n<router-outlet></router-outlet>\n<div class=\"container\">\n    <div class=\"jumbotron\">\n    \n    </div>\n\n\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/book-details/book-details.component.html":
+/*!************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/book-details/book-details.component.html ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <br>  \n    <div *ngIf=\"book; else loading\">\n    <h1>{{ book.name }}</h1>\n    <p *ngIf=\"book.isbn\">{{ book.isbn }}</p>\n    <div class=\"ui divider\"></div>\n    <div class=\"ui grid\">\n      <div class=\"four wide column\">\n        <h4>Authors</h4>\n        <ng-container *ngFor=\"let author of book.authors\">\n          {{ author }}\n        </ng-container>\n      </div>\n      <div class=\"four wide column\">\n        <h4>Country</h4>\n        {{ book.country }}\n      </div>\n      <div class=\"four wide column\">\n        <h4>Publisher</h4>\n        {{ book.publisher }}\n      </div>\n      <div class=\"four wide column\">\n        <h4>Number of Pages</h4>\n        {{ book.numberOfPages }}\n      </div>\n    </div>\n    <h4>Main Characters</h4>\n    <a *ngFor=\"let character of book.povCharacters\"\n    [routerLink]=\"['/characters',getId(character)]\">Character {{getId(character)}}, </a>\n    <div class=\"ui small images\">\n      <img *ngFor=\"let thumbnail of book.thumbnails\"\n        [src]=\"thumbnail.url\">\n    </div>\n  </div>\n\n  <ng-template #loading>\n    <div class=\"ui active centered inline loader\"></div>\n  </ng-template>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/book-list-item/book-list-item.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/book-list-item/book-list-item.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n <img class=\"ui tiny image\"\n      *ngIf=\"book.thumbnails && book.thumbnails[0] && book.thumbnails[0].url\"\n      [src]=\"book.thumbnails[0].url\">\n  <div class=\"content\">\n    <div class=\"header\">{{ book.name }}</div>\n    <div *ngIf=\"book.publisher\" class=\"description\">{{ book.publisher }}</div>\n    <div class=\"metadata\">\n     \n      <span *ngFor=\"let author of book.authors; last as l\">\n          {{ author }}<span *ngIf=\"!l\">, </span>\n        </span>\n      <br>\n      Country {{ book.country }}\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/book-list/book-list.component.html":
+/*!******************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/book-list/book-list.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\"> \n  <div class=\"ui middle aligned selection divided list\">\n    <bm-book-list-item class=\"item\"\n      *ngFor=\"let b of books\"\n      [book]=\"b\"\n      [routerLink]=\"books.indexOf(b)+1\"></bm-book-list-item>\n\n    <div *ngIf=\"!books\" class=\"ui active dimmer\">\n      <div class=\"ui large text loader\">Daten werden geladen...</div>\n    </div>\n\n    <p *ngIf=\"books && !books.length\">Es wurden noch keine Bücher eingetragen.</p>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/character-details/character-details.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/character-details/character-details.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div *ngIf=\"character; else loading\">\n    <h1>{{ character.name }}</h1>\n    <div class=\"ui divider\"></div>\n    <div class=\"ui grid\">\n      <div class=\"four wide column\">\n        <h4>Aiases</h4>\n        <ng-container *ngFor=\"let aliases of character.aliases\">\n          {{ aliases }}<br>\n        </ng-container>\n      </div>\n      <div class=\"four wide column\">\n        <h4>Name</h4>\n        {{ character.name }}\n      </div>\n      <div class=\"four wide column\">\n        <h4>Gender</h4>\n        {{ character.gender }}\n      </div>\n      <div class=\"four wide column\">\n        <h4>Culture</h4>\n        {{ character.culture }}\n      </div>\n    </div>\n    <h4>Actor</h4>\n    <p>{{ character.playedBy }}</p>\n    <div class=\"ui small images\">\n      <img *ngFor=\"let thumbnail of character.thumbnails\"\n        [src]=\"thumbnail.url\">\n    </div>\n  </div>\n\n  <ng-template #loading>\n    <div class=\"ui active centered inline loader\"></div>\n  </ng-template>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/character-list-item/character-list-item.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/character-list-item/character-list-item.component.html ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <img class=\"ui tiny image\"\n      *ngIf=\"character.thumbnails && character.thumbnails[0] && character.thumbnails[0].url\"\n      [src]=\"character.thumbnails[0].url\">\n  <div class=\"content\">\n    <div class=\"header\">{{ character.aliases }}</div>\n    <div *ngIf=\"character.titles\" class=\"description\">{{ character.titles }}</div>\n    <div class=\"metadata\">\n      <span *ngFor=\"let aliases of character.aliases; last as l\">\n        {{ aliases }}<span *ngIf=\"!l\">, </span>\n      </span>\n      <br>\n      {{ character.playedBy }}\n      <br>\n      {{ character.culture }}\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/character-list/character-list.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/character-list/character-list.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"ui middle aligned selection divided list\">\n    <bm-character-list-item class=\"item\"\n      *ngFor=\"let b of characters\"\n      [character]=\"b\"\n      [routerLink]=\"characters.indexOf(b)+1\"></bm-character-list-item>\n\n    <div *ngIf=\"!characters\" class=\"ui active dimmer\">\n      <div class=\"ui large text loader\">Daten werden geladen...</div>\n    </div>\n\n    <p *ngIf=\"books && !books.length\">Es wurden noch keine Bücher eingetragen.</p>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html":
+/*!********************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/home/home.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1>Home</h1>\n  <p>This is Game of Thrones books and characters App. Is uses https://anapioficeandfire.com/ API. </p>\n  <a routerLink=\"../books\" class=\"ui red button\">\n    See the books list\n    <i class=\"right arrow icon\"></i>\n  </a>\n</div>\n"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/house-details/house-details.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/house-details/house-details.component.html ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <div *ngIf=\"house; else loading\">\n      <h1>{{ house.name }}</h1>\n      <div class=\"ui divider\"></div>\n      <div class=\"ui grid\">\n        <div class=\"four wide column\">\n          <h4>Sworn Members</h4>\n          <a *ngFor=\"let character of house.swornMembers\"\n    [routerLink]=\"['/characters',getId(character)]\">Character {{getId(character)}}, </a>\n        </div>\n        <div class=\"four wide column\">\n          <h4>Name</h4>\n          {{ house.name }}\n        </div>\n        <div class=\"four wide column\">\n          <h4>Region</h4>\n          {{ house.gender }}\n        </div>\n        <div class=\"four wide column\">\n          <h4>Words</h4>\n          {{ house.words }}\n        </div>\n      </div>\n      <h4>Coat Of Arms</h4>\n      <p>{{ house.coatOfArms }}</p>\n      <div class=\"ui small images\">\n        <img *ngFor=\"let thumbnail of house.thumbnails\"\n          [src]=\"thumbnail.url\">\n      </div>\n    </div>\n  \n    <ng-template #loading>\n      <div class=\"ui active centered inline loader\"></div>\n    </ng-template>\n  </div>\n  "
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/house-list-item/house-list-item.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/house-list-item/house-list-item.component.html ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <img class=\"ui tiny image\"\n         *ngIf=\"house.thumbnails && house.thumbnails[0] && house.thumbnails[0].url\"\n         [src]=\"house.thumbnails[0].url\">\n     <div class=\"content\">\n       <div class=\"header\">{{ house.name }}</div>\n       <div *ngIf=\"house.region\" class=\"description\">{{ house.region }}</div>\n       <div class=\"metadata\">\n         {{ house.words }}\n       </div>\n     </div>\n   </div>\n   "
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/house-list/house-list.component.html":
+/*!********************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/house-list/house-list.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <div class=\"ui middle aligned selection divided list\">\n      <bm-house-list-item class=\"item\"\n        *ngFor=\"let b of houses\"\n        [house]=\"b\"\n        [routerLink]=\"houses.indexOf(b)+1\"></bm-house-list-item>\n  \n      <div *ngIf=\"!houses\" class=\"ui active dimmer\">\n        <div class=\"ui large text loader\">Daten werden geladen...</div>\n      </div>\n  \n      <p *ngIf=\"houses && !houses.length\">Es wurden noch keine Bücher eingetragen.</p>\n    </div>\n  </div>"
+
+/***/ }),
+
+/***/ "./node_modules/webpack/hot sync ^\\.\\/log$":
+/*!*************************************************!*\
+  !*** (webpack)/hot sync nonrecursive ^\.\/log$ ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./log": "./node_modules/webpack/hot/log.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/webpack/hot sync ^\\.\\/log$";
+
+/***/ }),
+
+/***/ "./src/app/app-routing.module.ts":
+/*!***************************************!*\
+  !*** ./src/app/app-routing.module.ts ***!
+  \***************************************/
+/*! exports provided: AppRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _book_list_book_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./book-list/book-list.component */ "./src/app/book-list/book-list.component.ts");
+/* harmony import */ var _character_list_character_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./character-list/character-list.component */ "./src/app/character-list/character-list.component.ts");
+/* harmony import */ var _house_list_house_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./house-list/house-list.component */ "./src/app/house-list/house-list.component.ts");
+/* harmony import */ var _book_details_book_details_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./book-details/book-details.component */ "./src/app/book-details/book-details.component.ts");
+/* harmony import */ var _character_details_character_details_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./character-details/character-details.component */ "./src/app/character-details/character-details.component.ts");
+/* harmony import */ var _house_details_house_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./house-details/house-details.component */ "./src/app/house-details/house-details.component.ts");
+
+
+
+
+
+
+
+
+
+
+const routes = [
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"]
+    },
+    {
+        path: 'books',
+        component: _book_list_book_list_component__WEBPACK_IMPORTED_MODULE_4__["BookListComponent"]
+    },
+    {
+        path: 'characters',
+        component: _character_list_character_list_component__WEBPACK_IMPORTED_MODULE_5__["CharacterListComponent"]
+    },
+    {
+        path: 'houses',
+        component: _house_list_house_list_component__WEBPACK_IMPORTED_MODULE_6__["HouseListComponent"]
+    },
+    {
+        path: 'books/:index',
+        component: _book_details_book_details_component__WEBPACK_IMPORTED_MODULE_7__["BookDetailsComponent"]
+    },
+    {
+        path: 'characters/:index',
+        component: _character_details_character_details_component__WEBPACK_IMPORTED_MODULE_8__["CharacterDetailsComponent"]
+    },
+    {
+        path: 'houses/:index',
+        component: _house_details_house_details_component__WEBPACK_IMPORTED_MODULE_9__["HouseDetailsComponent"]
+    }
+];
+let AppRoutingModule = class AppRoutingModule {
+};
+AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+    })
+], AppRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.component.css":
+/*!***********************************!*\
+  !*** ./src/app/app.component.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/app.component.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
+/*! exports provided: AppComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let AppComponent = class AppComponent {
+};
+AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-root',
+        template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
+        styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+    })
+], AppComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/app.module.ts":
+/*!*******************************!*\
+  !*** ./src/app/app.module.ts ***!
+  \*******************************/
+/*! exports provided: AppModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _book_list_book_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./book-list/book-list.component */ "./src/app/book-list/book-list.component.ts");
+/* harmony import */ var _book_list_item_book_list_item_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./book-list-item/book-list-item.component */ "./src/app/book-list-item/book-list-item.component.ts");
+/* harmony import */ var _book_details_book_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./book-details/book-details.component */ "./src/app/book-details/book-details.component.ts");
+/* harmony import */ var _character_list_item_character_list_item_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./character-list-item/character-list-item.component */ "./src/app/character-list-item/character-list-item.component.ts");
+/* harmony import */ var _character_list_character_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./character-list/character-list.component */ "./src/app/character-list/character-list.component.ts");
+/* harmony import */ var _character_details_character_details_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./character-details/character-details.component */ "./src/app/character-details/character-details.component.ts");
+/* harmony import */ var _house_list_house_list_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./house-list/house-list.component */ "./src/app/house-list/house-list.component.ts");
+/* harmony import */ var _house_list_item_house_list_item_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./house-list-item/house-list-item.component */ "./src/app/house-list-item/house-list-item.component.ts");
+/* harmony import */ var _house_details_house_details_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./house-details/house-details.component */ "./src/app/house-details/house-details.component.ts");
+
+
+
+ // NEW
+
+
+
+
+
+
+
+
+
+
+
+
+let AppModule = class AppModule {
+};
+AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+        declarations: [
+            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+            _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+            _book_list_book_list_component__WEBPACK_IMPORTED_MODULE_7__["BookListComponent"],
+            _book_list_item_book_list_item_component__WEBPACK_IMPORTED_MODULE_8__["BookListItemComponent"],
+            _book_details_book_details_component__WEBPACK_IMPORTED_MODULE_9__["BookDetailsComponent"],
+            _character_list_item_character_list_item_component__WEBPACK_IMPORTED_MODULE_10__["CharacterListItemComponent"],
+            _character_list_character_list_component__WEBPACK_IMPORTED_MODULE_11__["CharacterListComponent"],
+            _character_details_character_details_component__WEBPACK_IMPORTED_MODULE_12__["CharacterDetailsComponent"],
+            _house_list_house_list_component__WEBPACK_IMPORTED_MODULE_13__["HouseListComponent"],
+            _house_list_item_house_list_item_component__WEBPACK_IMPORTED_MODULE_14__["HouseListItemComponent"],
+            _house_details_house_details_component__WEBPACK_IMPORTED_MODULE_15__["HouseDetailsComponent"]
+        ],
+        imports: [
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"]
+        ],
+        providers: [],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+    })
+], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/book-details/book-details.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/book-details/book-details.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stZGV0YWlscy9ib29rLWRldGFpbHMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/book-details/book-details.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/book-details/book-details.component.ts ***!
+  \********************************************************/
+/*! exports provided: BookDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookDetailsComponent", function() { return BookDetailsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _shared_book_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/book-store.service */ "./src/app/shared/book-store.service.ts");
+
+
+
+
+let BookDetailsComponent = class BookDetailsComponent {
+    constructor(bs, router, route) {
+        this.bs = bs;
+        this.router = router;
+        this.route = route;
+    }
+    ngOnInit() {
+        const params = this.route.snapshot.paramMap;
+        this.bs.getSingle(params.get('index'))
+            .subscribe(b => this.book = b);
+    }
+    getRating(num) {
+        return new Array(num);
+    }
+    removeBook() {
+        if (confirm('Buch wirklich löschen?')) {
+            this.bs.remove(this.book.name)
+                .subscribe(res => this.router.navigate(['../'], { relativeTo: this.route }));
+        }
+    }
+    getId(character) {
+        const arrayCharacter = character.split('/');
+        const Id = arrayCharacter[5];
+        return Id;
+    }
+};
+BookDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-book-details',
+        template: __webpack_require__(/*! raw-loader!./book-details.component.html */ "./node_modules/raw-loader/index.js!./src/app/book-details/book-details.component.html"),
+        styles: [__webpack_require__(/*! ./book-details.component.css */ "./src/app/book-details/book-details.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_book_store_service__WEBPACK_IMPORTED_MODULE_3__["BookStoreService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], BookDetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/book-list-item/book-list-item.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/book-list-item/book-list-item.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stbGlzdC1pdGVtL2Jvb2stbGlzdC1pdGVtLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/book-list-item/book-list-item.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/book-list-item/book-list-item.component.ts ***!
+  \************************************************************/
+/*! exports provided: BookListItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookListItemComponent", function() { return BookListItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let BookListItemComponent = class BookListItemComponent {
+    ngOnInit() {
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], BookListItemComponent.prototype, "book", void 0);
+BookListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-book-list-item',
+        template: __webpack_require__(/*! raw-loader!./book-list-item.component.html */ "./node_modules/raw-loader/index.js!./src/app/book-list-item/book-list-item.component.html"),
+        styles: [__webpack_require__(/*! ./book-list-item.component.css */ "./src/app/book-list-item/book-list-item.component.css")]
+    })
+], BookListItemComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/book-list/book-list.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/book-list/book-list.component.css ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stbGlzdC9ib29rLWxpc3QuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/book-list/book-list.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/book-list/book-list.component.ts ***!
+  \**************************************************/
+/*! exports provided: BookListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookListComponent", function() { return BookListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared_book_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/book-store.service */ "./src/app/shared/book-store.service.ts");
+
+
+
+let BookListComponent = class BookListComponent {
+    constructor(bs) {
+        this.bs = bs;
+    }
+    ngOnInit() {
+        this.bs.getAll().subscribe(res => this.books = res);
+    }
+};
+BookListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-book-list',
+        template: __webpack_require__(/*! raw-loader!./book-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/book-list/book-list.component.html"),
+        styles: [__webpack_require__(/*! ./book-list.component.css */ "./src/app/book-list/book-list.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_book_store_service__WEBPACK_IMPORTED_MODULE_2__["BookStoreService"]])
+], BookListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/character-details/character-details.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/character-details/character-details.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1kZXRhaWxzL2NoYXJhY3Rlci1kZXRhaWxzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/character-details/character-details.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/character-details/character-details.component.ts ***!
+  \******************************************************************/
+/*! exports provided: CharacterDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterDetailsComponent", function() { return CharacterDetailsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _shared_character_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/character-store.service */ "./src/app/shared/character-store.service.ts");
+
+
+
+
+let CharacterDetailsComponent = class CharacterDetailsComponent {
+    constructor(bs, router, route) {
+        this.bs = bs;
+        this.router = router;
+        this.route = route;
+    }
+    ngOnInit() {
+        const params = this.route.snapshot.paramMap;
+        this.bs.getSingle(params.get('index'))
+            .subscribe(b => this.character = b);
+    }
+};
+CharacterDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-character-details',
+        template: __webpack_require__(/*! raw-loader!./character-details.component.html */ "./node_modules/raw-loader/index.js!./src/app/character-details/character-details.component.html"),
+        styles: [__webpack_require__(/*! ./character-details.component.css */ "./src/app/character-details/character-details.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_character_store_service__WEBPACK_IMPORTED_MODULE_3__["CharacterStoreService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], CharacterDetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/character-list-item/character-list-item.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/character-list-item/character-list-item.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1saXN0LWl0ZW0vY2hhcmFjdGVyLWxpc3QtaXRlbS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/character-list-item/character-list-item.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/character-list-item/character-list-item.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: CharacterListItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterListItemComponent", function() { return CharacterListItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CharacterListItemComponent = class CharacterListItemComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], CharacterListItemComponent.prototype, "character", void 0);
+CharacterListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-character-list-item',
+        template: __webpack_require__(/*! raw-loader!./character-list-item.component.html */ "./node_modules/raw-loader/index.js!./src/app/character-list-item/character-list-item.component.html"),
+        styles: [__webpack_require__(/*! ./character-list-item.component.css */ "./src/app/character-list-item/character-list-item.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], CharacterListItemComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/character-list/character-list.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/character-list/character-list.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NoYXJhY3Rlci1saXN0L2NoYXJhY3Rlci1saXN0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/character-list/character-list.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/character-list/character-list.component.ts ***!
+  \************************************************************/
+/*! exports provided: CharacterListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterListComponent", function() { return CharacterListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _shared_character_store_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/character-store.service */ "./src/app/shared/character-store.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+
+let CharacterListComponent = class CharacterListComponent {
+    constructor(bs) {
+        this.bs = bs;
+    }
+    ngOnInit() {
+        this.bs.getAll().subscribe(res => this.characters = res);
+    }
+};
+CharacterListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"])({
+        selector: 'bm-character-list',
+        template: __webpack_require__(/*! raw-loader!./character-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/character-list/character-list.component.html"),
+        styles: [__webpack_require__(/*! ./character-list.component.css */ "./src/app/character-list/character-list.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_character_store_service__WEBPACK_IMPORTED_MODULE_1__["CharacterStoreService"]])
+], CharacterListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/home/home.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/home/home.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/home.component.ts ***!
+  \****************************************/
+/*! exports provided: HomeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let HomeComponent = class HomeComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-home',
+        template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/home/home.component.html"),
+        styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/home/home.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], HomeComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/house-details/house-details.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/house-details/house-details.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvdXNlLWRldGFpbHMvaG91c2UtZGV0YWlscy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/house-details/house-details.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/house-details/house-details.component.ts ***!
+  \**********************************************************/
+/*! exports provided: HouseDetailsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HouseDetailsComponent", function() { return HouseDetailsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _shared_house_store_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/house-store.service */ "./src/app/shared/house-store.service.ts");
+
+
+
+
+let HouseDetailsComponent = class HouseDetailsComponent {
+    constructor(bs, router, route) {
+        this.bs = bs;
+        this.router = router;
+        this.route = route;
+    }
+    ngOnInit() {
+        const params = this.route.snapshot.paramMap;
+        this.bs.getSingle(params.get('index'))
+            .subscribe(b => this.house = b);
+    }
+    getId(house) {
+        const arrayHouse = house.split('/');
+        const Id = arrayHouse[5];
+        return Id;
+    }
+};
+HouseDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-house-details',
+        template: __webpack_require__(/*! raw-loader!./house-details.component.html */ "./node_modules/raw-loader/index.js!./src/app/house-details/house-details.component.html"),
+        styles: [__webpack_require__(/*! ./house-details.component.css */ "./src/app/house-details/house-details.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_house_store_service__WEBPACK_IMPORTED_MODULE_3__["HouseStoreService"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+        _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]])
+], HouseDetailsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/house-list-item/house-list-item.component.css":
+/*!***************************************************************!*\
+  !*** ./src/app/house-list-item/house-list-item.component.css ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvdXNlLWxpc3QtaXRlbS9ob3VzZS1saXN0LWl0ZW0uY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/house-list-item/house-list-item.component.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/house-list-item/house-list-item.component.ts ***!
+  \**************************************************************/
+/*! exports provided: HouseListItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HouseListItemComponent", function() { return HouseListItemComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let HouseListItemComponent = class HouseListItemComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+], HouseListItemComponent.prototype, "house", void 0);
+HouseListItemComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-house-list-item',
+        template: __webpack_require__(/*! raw-loader!./house-list-item.component.html */ "./node_modules/raw-loader/index.js!./src/app/house-list-item/house-list-item.component.html"),
+        styles: [__webpack_require__(/*! ./house-list-item.component.css */ "./src/app/house-list-item/house-list-item.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], HouseListItemComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/house-list/house-list.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/house-list/house-list.component.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvdXNlLWxpc3QvaG91c2UtbGlzdC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/house-list/house-list.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/house-list/house-list.component.ts ***!
+  \****************************************************/
+/*! exports provided: HouseListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HouseListComponent", function() { return HouseListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _shared_house_store_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/house-store.service */ "./src/app/shared/house-store.service.ts");
+
+
+
+let HouseListComponent = class HouseListComponent {
+    constructor(bs) {
+        this.bs = bs;
+    }
+    ngOnInit() {
+        this.bs.getAll().subscribe(res => this.houses = res);
+    }
+};
+HouseListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'bm-house-list',
+        template: __webpack_require__(/*! raw-loader!./house-list.component.html */ "./node_modules/raw-loader/index.js!./src/app/house-list/house-list.component.html"),
+        styles: [__webpack_require__(/*! ./house-list.component.css */ "./src/app/house-list/house-list.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_house_store_service__WEBPACK_IMPORTED_MODULE_2__["HouseStoreService"]])
+], HouseListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/book-store.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/shared/book-store.service.ts ***!
+  \**********************************************/
+/*! exports provided: BookStoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookStoreService", function() { return BookStoreService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let BookStoreService = class BookStoreService {
+    constructor(http) {
+        this.http = http;
+        this.api = 'https://cors-anywhere.herokuapp.com/' + 'anapioficeandfire.com/api';
+    }
+    getAll() {
+        return this.http.get(`${this.api}/books`);
+    }
+    getSingle(index) {
+        return this.http.get(
+        //`${this.api}${URL}`
+        `${this.api}/books/${index}`);
+    }
+    remove(index) {
+        return this.http.delete(`${this.api}/books/${index}`, { responseType: 'text' });
+    }
+};
+BookStoreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], BookStoreService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/character-store.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/shared/character-store.service.ts ***!
+  \***************************************************/
+/*! exports provided: CharacterStoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharacterStoreService", function() { return CharacterStoreService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let CharacterStoreService = class CharacterStoreService {
+    constructor(http) {
+        this.http = http;
+        this.api = 'https://cors-anywhere.herokuapp.com/' + 'anapioficeandfire.com/api';
+    }
+    getAll() {
+        return this.http.get(`${this.api}/characters`);
+    }
+    getSingle(index) {
+        return this.http.get(
+        //`${this.api}${URL}`
+        `${this.api}/characters/${index}`);
+    }
+    remove(index) {
+        return this.http.delete(`${this.api}/characters/${index}`, { responseType: 'text' });
+    }
+};
+CharacterStoreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], CharacterStoreService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/house-store.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/shared/house-store.service.ts ***!
+  \***********************************************/
+/*! exports provided: HouseStoreService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HouseStoreService", function() { return HouseStoreService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let HouseStoreService = class HouseStoreService {
+    constructor(http) {
+        this.http = http;
+        this.api = 'https://cors-anywhere.herokuapp.com/' + 'anapioficeandfire.com/api';
+    }
+    getAll() {
+        return this.http.get(`${this.api}/houses`);
+    }
+    getSingle(index) {
+        return this.http.get(
+        //`${this.api}${URL}`
+        `${this.api}/houses/${index}`);
+    }
+    remove(index) {
+        return this.http.delete(`${this.api}/houses/${index}`, { responseType: 'text' });
+    }
+};
+HouseStoreService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], HouseStoreService);
+
+
+
+/***/ }),
+
+/***/ "./src/environments/environment.ts":
+/*!*****************************************!*\
+  !*** ./src/environments/environment.ts ***!
+  \*****************************************/
+/*! exports provided: environment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+// This file can be replaced during build by using the `fileReplacements` array.
+// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+// The list of file replacements can be found in `angular.json`.
+const environment = {
+    production: false
+};
+/*
+ * For easier debugging in development mode, you can import the following file
+ * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
+ *
+ * This import should be commented out in production mode because it will have a negative impact
+ * on performance if an error is thrown.
+ */
+// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
+/***/ }),
+
+/***/ "./src/main.ts":
+/*!*********************!*\
+  !*** ./src/main.ts ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+
+
+
+
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+}
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+    .catch(err => console.error(err));
+
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************************!*\
+  !*** multi (webpack)-dev-server/client?http://0.0.0.0:0/sockjs-node ./src/main.ts ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! D:\Kurs1\GOT app\iteration-3-http-master\node_modules\webpack-dev-server\client\index.js?http://0.0.0.0:0/sockjs-node */"./node_modules/webpack-dev-server/client/index.js?http://0.0.0.0:0/sockjs-node");
+module.exports = __webpack_require__(/*! D:\Kurs1\GOT app\iteration-3-http-master\src\main.ts */"./src/main.ts");
+
+
+/***/ })
+
+},[[0,"runtime","vendor"]]]);
+//# sourceMappingURL=main.js.map
